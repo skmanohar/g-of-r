@@ -61,7 +61,7 @@ if __name__ == '__main__':
                             f.write(comment.id + "\n")
                             logger.info("Updated posts_replied_to list on file")
 
-        except APIException as e:
+        except Exception as e:
             logger.exception("Error !!: {}".format(str(vars(e))))
             logger.error("Error occured, retrying after 3 mins")
             time.sleep(180)
