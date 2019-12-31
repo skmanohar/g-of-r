@@ -42,7 +42,6 @@ if __name__ == '__main__':
             subreddit = reddit.subreddit(subreddits)
             for comment in subreddit.stream.comments():
                 if comment.id not in posts_replied_to:
-                    logger.info("Checking comment - {}".format(comment.body))
                     username = get_username(comment.author)
                     replied = False
                     if username == 'jaskier-bot':
