@@ -1,0 +1,8 @@
+__pycache__/
+
+.env
+.vscode/
+env/
+log.ini
+posts_replied_to.dat
+redditbot.log
