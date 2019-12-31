@@ -1,4 +1,5 @@
 import os
+import time
 import logging
 import json
 from logging.config import fileConfig
@@ -60,6 +61,7 @@ if __name__ == '__main__':
                             f.write(comment.id + "\n")
                             logger.info("Updated posts_replied_to list on file")
 
-        except Exception as e:
+        except APIException as e:
             logger.exception("Error !!: {}".format(str(vars(e))))
-            break
+            logger.error("Error occured, retrying after 3 mins")
+            time.sleep(180)
